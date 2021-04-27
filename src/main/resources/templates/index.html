@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<th:block th:replace="fragments/general.html :: page_header" />
+<body>
+
+	<div th:replace="fragments/general.html :: page_title"></div>
+	<ul>
+
+
+	
+	
+		<li sec:authorize="hasAnyRole('MANAGER','SHOPPER')"><a th:href="@{/addItem}">Add an Item</a></li>
+		<br>
+		
+		
+	<li><a th:href="@{/showIds}">Show Item</a></li>
+	<br>
+	<li sec:authorize="hasAnyRole('MANAGER')"><a th:href="@{/deleteItems}">Delete Items as per your choice</a></li>
+	</ul>
+
+	<div th:replace="fragments/general.html :: page_footer"></div>
+</body>

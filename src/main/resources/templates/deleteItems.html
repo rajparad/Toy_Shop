@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<th:block th:replace="fragments/general.html :: page_header" />
+<body>
+<!-- Have to rerun the project if all items are deleted only manager has the authority -->
+	<ul>
+		<li><a sec:authorize="hasAnyRole('MANAGER')" href=""
+			th:href="@{/delete/}">Delete All</a>&nbsp;</li>
+		<li><a sec:authorize="hasAnyRole('MANAGER')" href=""
+			th:href="@{/delete/quantity}">Delete Quantity 0</a>&nbsp;</li>
+	</ul>
+
+
+
+</body>
+</html>

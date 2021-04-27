@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<th:block th:block th:replace="fragments/general.html :: page_header" />
+<body>
+
+<section id="list">
+<h2 align="center">Item</h2>
+	<table >
+		<tr><th>ID</th><th>Description</th><th>Color</th><th>Weight</th><th>Quantity</th></tr>
+		<tr th:each="s : ${item}">
+		
+		<td th:text="${s.id}"></td>
+		<td th:text="${s.description}"></td>
+		<td th:text="${s.color}"></td>
+		<td th:text="${s.weight}"></td>
+		<td th:text="${s.quantity}"></td>
+		
+		<td>
+			<a sec:authorize="hasAnyRole('MANAGER')" href="" th:href="@{/edit/{id}/(id=${s.id})}">Edit</a>&nbsp;
+			<a sec:authorize="hasAnyRole('MANAGER')" href="" th:href="@{/delete/{id}/(id=${s.id})}">Delete</a>&nbsp;
+		</td>
+		</tr>
+	</table>
+	<br>
+		<a th:href="@{/showIds}">Show all Item by Id</a>
+</section>
+</body>
+</html>

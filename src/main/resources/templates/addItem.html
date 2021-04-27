@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<th:block th:block th:replace="fragments/general.html :: page_header" />
+<body>
+
+	<form  th:method="post" th:action="@{/addItem}" th:object="${item}">
+	<table>
+		<tr><td align="center" colspan="2">Appointment Form</td></tr>
+		<tr><td> Description:</td><td><input type="text"  th:field="*{description}" required="required"  /></td></tr>
+		<tr><td>Color: </td><td><input type="text"  th:field="*{color}" required="required" /></td></tr>
+		<tr><td>Weight: </td><td><input type="number" th:field="*{weight}"   required="required" /></td></tr>
+		<tr><td>Quantity: </td><td><input type="number" th:field="*{quantity}"   required="required" /></td></tr>
+		
+		<tr><td align="center" colspan="2"><input type="submit" value="Go!" /></td></tr>
+	</table>
+</form>
+
+		
+		<li><a th:href="@{/showIds}">Show Item</a></li>
+</body>
+</html>

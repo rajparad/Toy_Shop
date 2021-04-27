@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<th:block th:block th:replace="fragments/general.html :: page_header" />
+<body>
+
+<section id="list">
+<h2 align="center">Items</h2>
+	
+	<form th:method="post" th:action="@{/showIds}" th:object="${item}">
+	<table >
+		<tr><th>IDs</th></tr>
+		
+		
+		<tr><td>Select ID</td>
+		<td>	
+		
+			<select th:field="*{id}" class="dropdown" >
+  			<option th:each="c : ${items}" th:value="${c.id}" th:text="${c.id}"></option>
+			</select>
+	    </td>
+	    </tr>
+	    <tr><td align="center" colspan="2"><input type="submit" value="Go!" /></td></tr>
+	    
+			</table>
+		<br>
+		<li><a th:href="@{/}">Index Page</a></li>
+	<br>
+			
+</form>
+<br>
+
+<form action="#" th:action="@{/logout}" method="post">
+				<button type="submit" name="login-submit" id="login-submit" class="submit-button"
+				value="Log out">Log Out</button>
+			</form>
+</section>
+</body>
+</html>
